@@ -1,0 +1,19 @@
+// Protos/product-availability-service.proto
+
+syntax = "proto3";
+
+option csharp_namespace = "ProductAvailabilityService";
+
+package ProductAvailability;
+
+service ProductAvailabilityCheck {
+  rpc CheckProductAvailabilityRequest (ProductAvailabilityRequest) returns (ProductAvailabilityReply);
+}
+
+message ProductAvailabilityRequest {
+  string productId = 1;  
+}
+
+message ProductAvailabilityReply {
+  bool isAvailable = 1;
+}
