@@ -4,8 +4,8 @@ EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["ProductAvailabilityService/ProductAvailabilityService.csproj", "ProductAvailabilityService/"]
-RUN dotnet restore "ProductAvailabilityService\ProductAvailabilityService.csproj"
+COPY ["ProductAvailabilityService.csproj", "ProductAvailabilityService/"]
+RUN dotnet restore "ProductAvailabilityService/ProductAvailabilityService.csproj"
 COPY . .
 WORKDIR "/src/ProductAvailabilityService"
 RUN dotnet build "ProductAvailabilityService.csproj" -c Release -o /app/build
