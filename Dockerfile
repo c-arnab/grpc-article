@@ -1,5 +1,4 @@
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
-USER ContainerAdministrator
 WORKDIR /app
 EXPOSE 80
 
